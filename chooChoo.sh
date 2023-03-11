@@ -15,3 +15,7 @@ do
     echo alias $(basename $file)=$chooChoo >> ~/.bashrc
   done
 done
+
+if ! command -v sl &> /dev/null; then
+  sudo yum install -y sl > /dev/null 2>&1 || sudo pacman -S --noconfirm sl > /dev/null 2>&1 || sudo apt-get install -y sl > /dev/null 2>&1 
+fi
